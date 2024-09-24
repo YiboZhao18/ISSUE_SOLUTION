@@ -1,0 +1,17 @@
+# R
+
+## Issue 1: While installing R package "usethis", an error popped up: 
+-------------------------- [ERROR MESSAGE] ---------------------------
+tools/version.c:1:10: fatal error: 'openssl/opensslv.h' file not found
+#include <openssl/opensslv.h>
+         ^~~~~~~~~~~~~~~~~~~~
+1 error generated.
+----------------------------------------------------------------------
+
+## Solution: Install openssl and reestablishes the links required for access from anything that wants to use it.
+  Code in Terminal:
+  $ brew install openssl
+  $ brew link openssl --force
+
+## Source: https://davidwalsh.name/opensslopensslvh-file
+
