@@ -15,3 +15,15 @@ tools/version.c:1:10: fatal error: 'openssl/opensslv.h' file not found
 
 ## Source: https://davidwalsh.name/opensslopensslvh-file
 
+## Issue 2: While installing R package from github, an error popped up:
+# > devtools::install_github("kevinblighe/CorLevelPlot") ## somehow I could not load this package. you can try on yours
+Using GitHub PAT from the git credential store.
+Error: Failed to install 'unknown package' from GitHub:
+  HTTP error 401.
+  Bad credentials
+
+  Rate limit remaining: 55/60
+  Rate limit reset at: 2024-09-24 11:02:36 UTC
+
+## Solution: this error is caused by an invalid PAT saved in R environment.
+> Sys.setenv(GITHUB_PAT = "your PAT")
